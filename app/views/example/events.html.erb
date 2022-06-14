@@ -1,0 +1,15 @@
+<ul>
+  <% @event_list.items.each do |event| %>
+    <li><%= event.summary %> </li>
+  <% end %>
+</ul>
+
+
+
+<%= form_with url: new_event_url do |form| %>
+ <%= form.text_field :summary %>
+ <%= form.date_field :startdate %>
+ <%= form.date_field :enddate%>
+
+ <%= form.submit  %>
+<% end %>
